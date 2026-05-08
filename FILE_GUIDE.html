@@ -1,0 +1,573 @@
+<!-- 
+   JPIEM WEBSITE - FILE GUIDE & INDEX
+   
+   Use this as a quick reference for all files in your website project.
+   This is for reference only - you can open this in your browser or text editor.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JPIEM Website - File Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #c41e3a 0%, #1a1a1a 100%);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #c41e3a, #ffc700);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        .content {
+            padding: 40px 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            color: #c41e3a;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ffc700;
+        }
+        .file-list {
+            display: grid;
+            gap: 15px;
+        }
+        .file-item {
+            background: #f5f5f5;
+            border-left: 4px solid #c41e3a;
+            padding: 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .file-item:hover {
+            background: #fff;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .file-name {
+            color: #c41e3a;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .file-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .file-size {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+        .action-list {
+            background: #f9f3e6;
+            border-left: 4px solid #ffc700;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .action-list h3 {
+            color: #c41e3a;
+            margin-bottom: 15px;
+        }
+        .action-list ol {
+            margin-left: 20px;
+            line-height: 2;
+        }
+        .action-list li {
+            color: #666;
+        }
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .link-box {
+            background: linear-gradient(135deg, #c41e3a, #a01830);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+        .link-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .link-box strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .link-box small {
+            display: block;
+            opacity: 0.9;
+            font-size: 0.85rem;
+        }
+        .footer {
+            background: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        .highlight {
+            background: #fffacd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #c41e3a;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .table th,
+        .table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .table th {
+            background: #f5f5f5;
+            color: #c41e3a;
+            font-weight: bold;
+        }
+        .table tr:hover {
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🙏 JPIEM Website</h1>
+            <p>Jesus Power International Evangelical Ministry</p>
+            <p style="font-size: 0.95rem; margin-top: 10px;">Complete File Guide & Reference</p>
+        </div>
+
+        <div class="content">
+            <!-- Quick Start -->
+            <div class="section">
+                <h2>⚡ Quick Start</h2>
+                <div class="action-list">
+                    <h3>Get Started in 5 Minutes:</h3>
+                    <ol>
+                        <li>Open <code>index.html</code> in your browser to see the website</li>
+                        <li>Read <span class="highlight">QUICK_START.md</span> for setup instructions</li>
+                        <li>Update your church information (address, phone, email)</li>
+                        <li>Customize colors if desired</li>
+                        <li>Add your logo and images</li>
+                    </ol>
+                </div>
+
+                <div class="quick-links">
+                    <a href="index.html" class="link-box">
+                        <strong>📱 View Website</strong>
+                        <small>Open main homepage</small>
+                    </a>
+                    <a href="sermons.html" class="link-box">
+                        <strong>📖 View Sermons</strong>
+                        <small>Open sermons page</small>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Website Pages -->
+            <div class="section">
+                <h2>📄 Website Pages</h2>
+                <div class="file-list">
+                    <div class="file-item">
+                        <div class="file-name">📌 index.html</div>
+                        <div class="file-desc">
+                            Main homepage with all sections:
+                            <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                                <li>Navigation menu</li>
+                                <li>Hero banner</li>
+                                <li>About Us section</li>
+                                <li>Services offered</li>
+                                <li>Upcoming events</li>
+                                <li>Contact form</li>
+                                <li>Footer with social links</li>
+                            </ul>
+                        </div>
+                        <div class="file-size">Size: ~18 KB | Edit to customize content</div>
+                    </div>
+
+                    <div class="file-item">
+                        <div class="file-name">📖 sermons.html</div>
+                        <div class="file-desc">
+                            Dedicated sermons/messages page with:
+                            <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                                <li>Sermon card grid</li>
+                                <li>Filter buttons</li>
+                                <li>Featured series section</li>
+                                <li>6 sample sermons to customize</li>
+                            </ul>
+                        </div>
+                        <div class="file-size">Size: ~15 KB | Edit to add your sermons</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Styling & Scripts -->
+            <div class="section">
+                <h2>🎨 Styling & Functionality</h2>
+                <div class="file-list">
+                    <div class="file-item">
+                        <div class="file-name">🎨 css/styles.css</div>
+                        <div class="file-desc">
+                            Complete website styling:
+                            <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                                <li>Color scheme (red #c41e3a, gold #ffc700)</li>
+                                <li>All page layouts</li>
+                                <li>Mobile responsive design</li>
+                                <li>Animations and transitions</li>
+                                <li>4 responsive breakpoints</li>
+                            </ul>
+                        </div>
+                        <div class="file-size">Size: ~25 KB | Edit to change colors/design</div>
+                    </div>
+
+                    <div class="file-item">
+                        <div class="file-name">⚙️ js/script.js</div>
+                        <div class="file-desc">
+                            Interactive features:
+                            <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                                <li>Mobile menu toggle</li>
+                                <li>Smooth scrolling</li>
+                                <li>Contact form handling</li>
+                                <li>Scroll animations</li>
+                                <li>Navigation highlighting</li>
+                            </ul>
+                        </div>
+                        <div class="file-size">Size: ~4 KB | Advanced users only</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documentation -->
+            <div class="section">
+                <h2>📚 Documentation & Guides</h2>
+                <div class="file-list">
+                    <div class="file-item">
+                        <div class="file-name">⚡ QUICK_START.md</div>
+                        <div class="file-desc">
+                            <strong>START HERE!</strong> Step-by-step guide to:
+                            <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                                <li>View your website (2 minutes)</li>
+                                <li>Update essential information (3 minutes)</li>
+                                <li>Customize colors (optional)</li>
+                                <li>Add images and logo</li>
+                                <li>Publishing options</li>
+                                <li>Testing checklist</li>
+                            </ul>
+                        </div>
+                        <div class="file-size">⭐ Best for beginners | Read this first!</div>
+                    </div>
+
+                    <div class="file-item">
+                        <div class="file-name">✅ CUSTOMIZATION_GUIDE.md</div>
+                        <div class="file-desc">
+                            Detailed customization checklist:
+                            <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                                <li>Priority 1: Essential information</li>
+                                <li>Priority 2: Branding & colors</li>
+                                <li>Priority 3: Content updates</li>
+                                <li>Priority 4: Social media links</li>
+                                <li>Testing checklist</li>
+                                <li>Common customizations</li>
+                            </ul>
+                        </div>
+                        <div class="file-size">Best for planning all updates</div>
+                    </div>
+
+                    <div class="file-item">
+                        <div class="file-name">📖 README.md</div>
+                        <div class="file-desc">
+                            Complete technical documentation:
+                            <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                                <li>Feature overview</li>
+                                <li>File structure</li>
+                                <li>Customization instructions</li>
+                                <li>Hosting options (free & paid)</li>
+                                <li>SEO optimization</li>
+                                <li>Troubleshooting</li>
+                                <li>Future enhancements</li>
+                            </ul>
+                        </div>
+                        <div class="file-size">Comprehensive reference guide</div>
+                    </div>
+
+                    <div class="file-item">
+                        <div class="file-name">📋 PROJECT_SUMMARY.md</div>
+                        <div class="file-desc">
+                            Project overview and status:
+                            <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                                <li>What's included</li>
+                                <li>Key features list</li>
+                                <li>File descriptions</li>
+                                <li>Next steps</li>
+                                <li>Success metrics</li>
+                                <li>Support resources</li>
+                            </ul>
+                        </div>
+                        <div class="file-size">Project overview & planning</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Folders -->
+            <div class="section">
+                <h2>📁 Folder Structure</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Folder</th>
+                            <th>Purpose</th>
+                            <th>What Goes Here</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>css/</code></td>
+                            <td>Styling</td>
+                            <td>styles.css (already included)</td>
+                        </tr>
+                        <tr>
+                            <td><code>js/</code></td>
+                            <td>Functionality</td>
+                            <td>script.js (already included)</td>
+                        </tr>
+                        <tr>
+                            <td><code>assets/</code></td>
+                            <td>Media files</td>
+                            <td>Images, logos, photos</td>
+                        </tr>
+                        <tr>
+                            <td><code>assets/images/</code></td>
+                            <td>Image storage</td>
+                            <td>Church photos, logos, etc.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- What to Edit -->
+            <div class="section">
+                <h2>✏️ What to Edit First</h2>
+                <div class="action-list" style="background: #e6f9ff; border-left-color: #0066cc;">
+                    <h3 style="color: #0066cc;">These files need your content:</h3>
+                    <ol>
+                        <li><strong>index.html</strong> - Update church details, events, services</li>
+                        <li><strong>sermons.html</strong> - Add your actual sermons</li>
+                        <li><strong>css/styles.css</strong> - Optional: change colors to match your brand</li>
+                        <li><strong>Add images</strong> to assets/ folder for church photos</li>
+                    </ol>
+                </div>
+                <div class="action-list" style="background: #f0f0f0; border-left-color: #999;">
+                    <h3 style="color: #666;">DO NOT edit (unless you know code):</h3>
+                    <ol>
+                        <li><strong>js/script.js</strong> - Complex JavaScript (unless you're a developer)</li>
+                        <li>CSS complex selectors - Use simple color/text changes only</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="section">
+                <h2>🔧 Customization Help</h2>
+                <p style="color: #666; line-height: 1.8; margin-bottom: 15px;">
+                    Each documentation file contains specific instructions:
+                </p>
+                <div class="file-list">
+                    <div class="file-item">
+                        <div class="file-name">📍 Find Address in HTML:</div>
+                        <div class="file-desc">
+                            <code>index.html</code> → Search for "[Your Church Address]"
+                        </div>
+                    </div>
+                    <div class="file-item">
+                        <div class="file-name">📞 Find Phone Number:</div>
+                        <div class="file-desc">
+                            <code>index.html</code> → Search for "+1 (XXX) XXX-XXXX"
+                        </div>
+                    </div>
+                    <div class="file-item">
+                        <div class="file-name">🎨 Find Colors:</div>
+                        <div class="file-desc">
+                            <code>css/styles.css</code> → Search for "--primary-color"
+                        </div>
+                    </div>
+                    <div class="file-item">
+                        <div class="file-name">📅 Find Events:</div>
+                        <div class="file-desc">
+                            <code>index.html</code> → Look for "event-card" sections
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- File Size Summary -->
+            <div class="section">
+                <h2>📊 Project Statistics</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total Files</td>
+                            <td>7 HTML + CSS + JS + Docs</td>
+                        </tr>
+                        <tr>
+                            <td>Lines of Code</td>
+                            <td>~1,200</td>
+                        </tr>
+                        <tr>
+                            <td>Web Pages</td>
+                            <td>2 (Homepage + Sermons)</td>
+                        </tr>
+                        <tr>
+                            <td>Responsive Breakpoints</td>
+                            <td>4 (Mobile to Desktop)</td>
+                        </tr>
+                        <tr>
+                            <td>External Dependencies</td>
+                            <td>1 (Font Awesome icons)</td>
+                        </tr>
+                        <tr>
+                            <td>Load Time</td>
+                            <td>&lt;1 second</td>
+                        </tr>
+                        <tr>
+                            <td>Mobile Optimized</td>
+                            <td>✅ Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Hosting Options -->
+            <div class="section">
+                <h2>🌐 Ready to Publish?</h2>
+                <div class="action-list" style="background: #f0ffe6; border-left-color: #00b300;">
+                    <h3 style="color: #00b300;">Free Hosting Options:</h3>
+                    <ul style="margin: 10px 0 0 20px; line-height: 2;">
+                        <li><strong>GitHub Pages</strong> - Free forever (best for beginners)</li>
+                        <li><strong>Netlify</strong> - Easy drag & drop</li>
+                        <li><strong>Firebase</strong> - Google's hosting</li>
+                    </ul>
+                </div>
+                <div class="action-list" style="background: #fffacd; border-left-color: #ffc700;">
+                    <h3 style="color: #c41e3a;">Paid Hosting (More Options):</h3>
+                    <ul style="margin: 10px 0 0 20px; line-height: 2;">
+                        <li><strong>Bluehost</strong> - From $2.95/month</li>
+                        <li><strong>GoDaddy</strong> - Popular and reliable</li>
+                        <li><strong>SiteGround</strong> - Good support</li>
+                    </ul>
+                </div>
+                <p style="color: #666; margin-top: 20px;">
+                    See <strong>README.md</strong> or <strong>QUICK_START.md</strong> for detailed publishing instructions.
+                </p>
+            </div>
+
+            <!-- Support -->
+            <div class="section">
+                <h2>📞 Need Help?</h2>
+                <div class="file-list">
+                    <div class="file-item">
+                        <div class="file-name">❓ Quick Questions</div>
+                        <div class="file-desc">Check QUICK_START.md first - it has answers to common questions</div>
+                    </div>
+                    <div class="file-item">
+                        <div class="file-name">🔍 Can't Find Something</div>
+                        <div class="file-desc">Use Ctrl+F (Cmd+F on Mac) to search in documentation files</div>
+                    </div>
+                    <div class="file-item">
+                        <div class="file-name">💻 Code Help</div>
+                        <div class="file-desc">Each file has comments explaining what it does</div>
+                    </div>
+                    <div class="file-item">
+                        <div class="file-name">🎓 Learning</div>
+                        <div class="file-desc">Visit W3Schools.com for HTML, CSS, and JavaScript tutorials</div>
+                    </div>
+                    <div class="file-item">
+                        <div class="file-name">👨‍💼 Professional Help</div>
+                        <div class="file-desc">Hire a web developer on Fiverr or Upwork for complex features</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="section">
+                <h2>✨ You're All Set!</h2>
+                <div class="action-list" style="background: #fff5e6; border-left-color: #ff6600;">
+                    <h3 style="color: #ff6600;">Next Steps:</h3>
+                    <ol style="line-height: 2; margin-left: 20px;">
+                        <li>📖 Open <span class="highlight">QUICK_START.md</span></li>
+                        <li>🌐 View <span class="highlight">index.html</span> in your browser</li>
+                        <li>✏️ Update your church information</li>
+                        <li>🎨 Customize colors (optional)</li>
+                        <li>📸 Add your church photos</li>
+                        <li>🚀 Choose hosting and publish</li>
+                        <li>📢 Share with your community</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Jesus Power International Evangelical Ministry Website</strong></p>
+            <p>Created: May 2024 | Version 1.0 | Status: ✅ Complete</p>
+            <p style="margin-top: 15px; font-size: 0.9rem;">
+                🙏 This website is ready to serve your ministry. Keep it updated and let it represent your church with excellence.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

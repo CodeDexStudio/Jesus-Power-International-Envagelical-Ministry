@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermons & Messages - Jesus Power International Evangelical Ministry</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .sermons-hero {
+            background: linear-gradient(135deg, #c41e3a 0%, #1a1a1a 100%);
+            padding: 60px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .sermons-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .sermons-hero p {
+            font-size: 1.2rem;
+            color: #ffc700;
+        }
+
+        .sermons-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .sermon-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #c41e3a;
+            background: white;
+            color: #c41e3a;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .filter-btn.active {
+            background: #c41e3a;
+            color: white;
+        }
+
+        .filter-btn:hover {
+            background: #c41e3a;
+            color: white;
+        }
+
+        .sermons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .sermon-card {
+            background: #f5f5f5;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .sermon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(196, 30, 58, 0.2);
+        }
+
+        .sermon-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #c41e3a, #ffc700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .sermon-content {
+            padding: 2rem;
+        }
+
+        .sermon-date {
+            color: #c41e3a;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .sermon-content h3 {
+            color: #c41e3a;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .sermon-speaker {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sermon-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .sermon-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .sermon-btn {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .sermon-btn-listen {
+            background: #c41e3a;
+            color: white;
+        }
+
+        .sermon-btn-listen:hover {
+            background: #a01830;
+        }
+
+        .sermon-btn-share {
+            background: #ffc700;
+            color: #333;
+        }
+
+        .sermon-btn-share:hover {
+            background: #e6b300;
+        }
+
+        .series-section {
+            background: #f5f5f5;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .series-section h2 {
+            color: #c41e3a;
+            margin-bottom: 1rem;
+        }
+
+        .series-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .series-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #c41e3a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .series-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .series-item h3 {
+            color: #c41e3a;
+            margin-bottom: 0.5rem;
+        }
+
+        .series-count {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .sermons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sermons-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .sermon-filters {
+                flex-direction: column;
+            }
+
+            .filter-btn {
+                width: 100%;
+            }
+
+            .sermon-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <i class="fas fa-cross"></i> JPIEM
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-links">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-links">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="sermons.html" class="nav-links" style="color: #ffc700;">Sermons</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-links">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="sermons-hero">
+        <h1>Sermons & Messages</h1>
+        <p>Inspiring teachings to strengthen your faith</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="sermons-container">
+        <div class="sermon-filters">
+            <button class="filter-btn active" onclick="filterSermons('all')">All Sermons</button>
+            <button class="filter-btn" onclick="filterSermons('recent')">Recent</button>
+            <button class="filter-btn" onclick="filterSermons('popular')">Popular</button>
+            <button class="filter-btn" onclick="filterSermons('series')">Series</button>
+        </div>
+
+        <!-- Featured Series -->
+        <div class="series-section">
+            <h2><i class="fas fa-book"></i> Featured Series</h2>
+            <div class="series-list">
+                <div class="series-item">
+                    <h3>Faith & Belief</h3>
+                    <p class="series-count">5 Messages</p>
+                </div>
+                <div class="series-item">
+                    <h3>Power of Prayer</h3>
+                    <p class="series-count">4 Messages</p>
+                </div>
+                <div class="series-item">
+                    <h3>God's Love</h3>
+                    <p class="series-count">6 Messages</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sermons Grid -->
+        <div class="sermons-grid">
+            <!-- Sermon 1 -->
+            <div class="sermon-card">
+                <div class="sermon-image">
+                    <i class="fas fa-microphone-alt"></i>
+                </div>
+                <div class="sermon-content">
+                    <div class="sermon-date">May 5, 2024</div>
+                    <h3>The Power of Faith</h3>
+                    <div class="sermon-speaker">
+                        <i class="fas fa-user-circle"></i> Pastor John
+                    </div>
+                    <p class="sermon-description">Discover how faith can transform your life and overcome any obstacle. Learn biblical principles that will strengthen your spiritual journey.</p>
+                    <div class="sermon-actions">
+                        <a href="#" class="sermon-btn sermon-btn-listen">
+                            <i class="fas fa-play"></i> Listen
+                        </a>
+                        <a href="#" class="sermon-btn sermon-btn-share">
+                            <i class="fas fa-share-alt"></i> Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sermon 2 -->
+            <div class="sermon-card">
+                <div class="sermon-image">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="sermon-content">
+                    <div class="sermon-date">April 28, 2024</div>
+                    <h3>God's Love Never Fails</h3>
+                    <div class="sermon-speaker">
+                        <i class="fas fa-user-circle"></i> Pastor Sarah
+                    </div>
+                    <p class="sermon-description">Explore the infinite love of God and how it relates to our daily lives. This message will touch your heart and renew your commitment to Christ.</p>
+                    <div class="sermon-actions">
+                        <a href="#" class="sermon-btn sermon-btn-listen">
+                            <i class="fas fa-play"></i> Listen
+                        </a>
+                        <a href="#" class="sermon-btn sermon-btn-share">
+                            <i class="fas fa-share-alt"></i> Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sermon 3 -->
+            <div class="sermon-card">
+                <div class="sermon-image">
+                    <i class="fas fa-hands-praying"></i>
+                </div>
+                <div class="sermon-content">
+                    <div class="sermon-date">April 21, 2024</div>
+                    <h3>Prayer: Talking to God</h3>
+                    <div class="sermon-speaker">
+                        <i class="fas fa-user-circle"></i> Pastor Michael
+                    </div>
+                    <p class="sermon-description">Learn the importance of prayer in your spiritual life. Discover practical ways to deepen your connection with God through prayer and meditation.</p>
+                    <div class="sermon-actions">
+                        <a href="#" class="sermon-btn sermon-btn-listen">
+                            <i class="fas fa-play"></i> Listen
+                        </a>
+                        <a href="#" class="sermon-btn sermon-btn-share">
+                            <i class="fas fa-share-alt"></i> Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sermon 4 -->
+            <div class="sermon-card">
+                <div class="sermon-image">
+                    <i class="fas fa-light-bulb"></i>
+                </div>
+                <div class="sermon-content">
+                    <div class="sermon-date">April 14, 2024</div>
+                    <h3>Living with Purpose</h3>
+                    <div class="sermon-speaker">
+                        <i class="fas fa-user-circle"></i> Pastor John
+                    </div>
+                    <p class="sermon-description">Understand God's purpose for your life and how to align your actions with His will. Find meaning and fulfillment through serving others.</p>
+                    <div class="sermon-actions">
+                        <a href="#" class="sermon-btn sermon-btn-listen">
+                            <i class="fas fa-play"></i> Listen
+                        </a>
+                        <a href="#" class="sermon-btn sermon-btn-share">
+                            <i class="fas fa-share-alt"></i> Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sermon 5 -->
+            <div class="sermon-card">
+                <div class="sermon-image">
+                    <i class="fas fa-dove"></i>
+                </div>
+                <div class="sermon-content">
+                    <div class="sermon-date">April 7, 2024</div>
+                    <h3>Peace in Chaos</h3>
+                    <div class="sermon-speaker">
+                        <i class="fas fa-user-circle"></i> Pastor Sarah
+                    </div>
+                    <p class="sermon-description">In times of uncertainty, discover the peace that only comes from God. Learn how to trust in His plan during difficult seasons of life.</p>
+                    <div class="sermon-actions">
+                        <a href="#" class="sermon-btn sermon-btn-listen">
+                            <i class="fas fa-play"></i> Listen
+                        </a>
+                        <a href="#" class="sermon-btn sermon-btn-share">
+                            <i class="fas fa-share-alt"></i> Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sermon 6 -->
+            <div class="sermon-card">
+                <div class="sermon-image">
+                    <i class="fas fa-cross"></i>
+                </div>
+                <div class="sermon-content">
+                    <div class="sermon-date">March 31, 2024</div>
+                    <h3>Resurrection & New Life</h3>
+                    <div class="sermon-speaker">
+                        <i class="fas fa-user-circle"></i> Pastor Michael
+                    </div>
+                    <p class="sermon-description">Easter message focusing on the resurrection of Christ and what it means for our lives today. Experience renewal and hope in Jesus.</p>
+                    <div class="sermon-actions">
+                        <a href="#" class="sermon-btn sermon-btn-listen">
+                            <i class="fas fa-play"></i> Listen
+                        </a>
+                        <a href="#" class="sermon-btn sermon-btn-share">
+                            <i class="fas fa-share-alt"></i> Share
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About JPIEM</h3>
+                    <p>Jesus Power International Evangelical Ministry - Serving with Faith and Love</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="sermons.html">Sermons</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jesus Power International Evangelical Ministry. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Filter function
+        function filterSermons(filter) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Animation
+            const cards = document.querySelectorAll('.sermon-card');
+            cards.forEach(card => {
+                card.style.opacity = '0.5';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transition = 'opacity 0.3s ease';
+                }, 100);
+            });
+
+            console.log('Filtered by:', filter);
+        }
+    </script>
+</body>
+</html>
